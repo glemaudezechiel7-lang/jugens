@@ -1,0 +1,123 @@
+/* Style global */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding-top: 70px; /* espace pour la navbar fixe */
+}
+
+/* Navbar */
+.navbar {
+  box-shadow: 0 4px 6px rgba(168, 31, 31, 0.1);
+  background: linear-gradient(135deg, #abb4ae, #218838);
+}
+.navbar-brand {
+  font-weight: bold;
+  color: #28a745 !important;
+}
+.nav-link {
+  transition: color 0.3s;
+}
+.nav-link:hover {
+  color: #28a745 !important;
+}
+
+/* Bannière */
+.page-banner {
+  background: linear-gradient(135deg, #abb4ae, #218838);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+.page-banner h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.page-banner p {
+  font-size: 1.2rem;
+}
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Carousel */
+.carousel-item img {
+  object-fit: cover;
+  height: 100vh;
+}
+.carousel-caption h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.carousel-caption p {
+  font-size: 1rem;
+}
+
+/* Cartes produits */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: none;
+  border-radius: 10px;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.card-title {
+  font-weight: bold;
+  color: #28a745;
+}
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+.btn-primary {
+  background-color: #28a745;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+.btn-primary:hover {
+  background-color: #218838;
+  transform: translateY(-3px);
+}
+
+/* Bouton catalogue */
+.btn-catalogue {
+  background-color: #28a745;
+  color: white;
+  border-radius: 30px;
+  transition: transform 0.3s;
+}
+.btn-catalogue:hover {
+  transform: scale(1.1);
+  background-color: #218838;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(135deg, #abb4ae, #218838);
+  color: white;
+  padding: 20px;
+}
+footer a {
+  color: #28a745;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+#cart-count {
+  font-size: 0.75rem;
+  padding: 4px 6px;
+}

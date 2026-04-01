@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <style>
+        header{
+             background: linear-gradient(135deg, #abb4ae, #218838);
+        }
+    </style>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panier - C.E.P.S</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+
+  <header class="bg-light p-3 text-center">
+    <h1>🛒 Mon Panier</h1>
+    <a href="produit.html" class="btn btn-secondary">← Retour aux produits</a>
+  </header>
+
+  <main class="container my-5">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th>Produit</th>
+          <th>Prix (€)</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="cart-items"></tbody>
+    </table>
+
+    <h3>Total : <span id="cart-total">0</span> €</h3>
+
+    <div class="mt-3">
+      <button class="btn btn-danger" id="clear-cart">Vider le panier</button>
+      <button class="btn btn-success" id="checkout">Passer commande</button>
+    </div>
+  </main>
+
+  <script>
+    function renderCart() {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      let cartItems = document.getElementById('cart-items');
+      let total = 0;
+      cartItems.innerHTML = "";
+      cart.forEach((item, index) => {
+        total += item.price;
+        cartItems.innerHTML += `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.price}</td>
+            <td><button class="btn btn-sm btn-danger" onclick="removeItem(${index})">Supprimer</button></td>
+          </tr>
+        `;
+      });
+      document.getElementById('cart-total').textContent = total.toFixed(2);
+    }
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCart();
+    }
+
+    document.getElementById('clear-cart').addEventListener('click', () => {
+      localStorage.removeItem('cart');
+      renderCart();
+    });
+
+    document.getElementById('checkout').addEventListener('click', () => {
+      alert("Commande passée avec succès !");
+      localStorage.removeItem('cart');
+      renderCart();
+    });
+
+    renderCart();
+  </script>
+</body>
+</html>
