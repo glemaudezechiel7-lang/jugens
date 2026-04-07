@@ -136,3 +136,35 @@ footer {
 
 
 }
+
+
+/* Style général du tableau */
+.table {
+  font-size: 1rem; /* taille normale sur grand écran */
+}
+
+/* ✅ Adaptation sur petit écran */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.8rem;        /* réduire la taille du texte */
+  }
+
+  .table th, .table td {
+    padding: 6px;             /* réduire les marges internes */
+  }
+
+  h3 {
+    font-size: 1rem;          /* réduire le titre "Grand Total" */
+  }
+
+  .btn {
+    font-size: 0.8rem;        /* boutons plus petits */
+    padding: 6px 10px;
+  }
+
+  /* ✅ Rendre le tableau scrollable horizontalement */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
