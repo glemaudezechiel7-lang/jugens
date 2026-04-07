@@ -1,218 +1,138 @@
 /* Style global */
-body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #c2cacf !important;
-  color: #333;
+
+
+
+
+
+/* Empêcher le scroll horizontal */
+html, body {
+  overflow-x: hidden;
   margin: 0;
-  padding-top: 10px; /* espace pour la navbar fixe */
+  padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* Couleur verte au survol */
+/* Style au survol */
+.navbar-nav .nav-link:hover {
+  background-color:#218833;   /* vert */
+  color: #fff !important;      /* texte blanc */
+  border-radius: 5px;
+  transition: 0.3s ease;
 }
 
-/* Navbar */
-.navbar {
-  box-shadow: 0 4px 6px rgba(168, 31, 31, 0.1);
-  background: linear-gradient(135deg, #218838, #abb4ae);
-}
-.navbar-brand {
-  font-weight: bold;
-  color:white !important;
-}
-.nav-link {
-  transition: color 0.3s;
-}
-.nav-link:hover {
-  color: #31b45d !important;
-}
-
-.btn-catalogue:hover{
-padding-top: 50px !important;
-}
-.avis-sections{
-    text-align: center;
-}
-
-.pa{
-    padding-top: 100px;
-}
-.navbar-brand  h4{
-    font-size: 1.2rem;
+/* Style actif (page courante) */
+.navbar-nav .nav-link.active {
+  background-color: #218833;   /* vert permanent */
+  color: #fff !important;
+  border-radius: 5px;
 }
 
 
-/* Bannière */
-.page-banner {
-  background: linear-gradient(135deg, #abb4ae, #218838);
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  animation: fadeIn 2s ease-in-out;
+
+.c{
+
+  
+ 
+  margin-top: 100px;
+
 }
-.page-banner h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.page-banner p {
-  font-size: 1.2rem;
-}
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(-20px);}
-  to {opacity: 1; transform: translateY(0);}
+/* Contenu principal */
+main {
+  flex: 1;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: justify;
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 80px; /* Compense la hauteur du header fixé */
 }
 
-/* Carousel */
-.carousel-item img {
-  object-fit: cover;
-  height: 100vh;
-  border-radius: 20px ;
-}
-.carousel-caption h5 {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-.carousel-caption p {
-  font-size: 1rem;
+/* Titres */
+main h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-/* Cartes produits */
-.card {
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: none;
-  border-radius: 10px;
-}
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-.card-title {
-  font-weight: bold;
-  color: #28a745;
-}
-.card-text {
-  font-size: 0.95rem;
-  color: #555;
-}
-.btn-primary {
-  background-color: #28a745;
-  border: none;
-  transition: background-color 0.3s, transform 0.2s;
-}
-.btn-primary:hover {
-  background-color: #218838;
-  transform: translateY(-3px);
-}
-
-/* Bouton catalogue */
-.btn-catalogue {
-  background-color: #28a745;
-  color: white;
-  border-radius: 30px;
-  transition: transform 0.3s;
-}
-.btn-catalogue:hover {
-  transform: scale(1.1);
-  background-color: #218838;
+main h3 {
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 10px;
 }
 
 /* Footer */
 footer {
-  background: linear-gradient(135deg, #abb4ae, #218838);
+   background: linear-gradient(135deg, #218838, #abb4ae) !important;
   color: white;
+  text-align: center;
   padding: 20px;
-}
-footer a {
-  color: #28a745;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
-@media (max-width: 576px) {
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
-
-  .nav-link {
-    font-size: 2.9rem;
-    padding: 10px;
-  }
-
-  section {
-    padding: 40px 15px;
-  }
-
-  section h1, section h2 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  img {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-
-  .btn {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
-
-.ranger img{
-    width: 100%;
-    height: 80%;
-
-
+  margin: 0;
 }
 
 
-#carouselProduits img {
-  max-height: 400px;
-  object-fit: cover;
+/* Conteneur du panier */
+.panier-container {
+  text-align: center;          /* centre le contenu */
+  margin-top: 50px;
+  animation: fadeInUp 1s ease; /* animation d'apparition */
 }
 
-
-
-
-#cart-count {
-  font-size: 0.75rem;
-  padding: 4px 6px;
+/* Titre */
+.panier-container h1 {
+  background: linear-gradient(135deg, #218838, #abb4ae); /* fond dégradé vert */
+  color: white;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;          /* coins arrondis */
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-
-/* Animation fade-in */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1.2s ease forwards;
+/* Bouton retour */
+.panier-container .btn {
+   background: linear-gradient(135deg, #218838, #abb4ae);
+  color: white;
+  border-radius: 30px;          /* bouton arrondi */
+  padding: 10px 20px;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
+.panier-container .btn:hover {
+  background-color: #28a745;
+  transform: scale(1.1);        /* effet zoom au survol */
+}
+
+/* Animation */
 @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-/* Taille plus grande du carousel */
-/* Rectangle uniforme pour les carousels */
-
-  img {
-    max-width: 90%;
-    margin: 0 auto;
-    display: block;
-  }
-
-
-/* Grands écrans (desktop) */
-@media (min-width: 993px) {
-  .navbar-brand {
-    font-size: 1.7rem;
-  }
-
-  .nav-link {
-    font-size: 1.4rem;
-    padding: 12px;
-  }
-
+/* Uniformiser la taille des cartes */
+.card {
+  height: 100%;              /* occupe toute la hauteur disponible */
+  display: flex;             /* permet d'utiliser flexbox */
+  flex-direction: column;    /* contenu vertical */
+  justify-content: space-between; /* espace équilibré entre image et texte */
 }
 
+/* Uniformiser la taille des images */
+.card-img-top {
+  width: 100%;
+  height: 200px;             /* fixe une hauteur identique pour toutes les images */
+  object-fit: cover;         /* recadre sans déformer */
+}
 
+.card button{
+  background-color: #218838 ;
+
+
+}
