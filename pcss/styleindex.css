@@ -21,6 +21,7 @@ html, body {
   color: #fff !important;      /* texte blanc */
   border-radius: 5px;
   transition: 0.3s ease;
+  padding: 0px;
 }
 
 /* Style actif (page courante) */
@@ -28,6 +29,7 @@ html, body {
   background-color: #218833;   /* vert permanent */
   color: #fff !important;
   border-radius: 5px;
+  padding: 0%;
 }
 
 
