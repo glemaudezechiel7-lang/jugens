@@ -12,6 +12,7 @@ html, body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  margin: 20px;
 }
 /* Couleur verte au survol */
 /* Style au survol */
@@ -46,7 +47,7 @@ main {
   text-align: justify;
   padding: 20px 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  
   margin-top: 80px; /* Compense la hauteur du header fixé */
 }
 
@@ -133,9 +134,11 @@ footer {
 
 .card button{
   background-color: #218838 ;
+  
 
 
 }
+
 
 
 /* Style général du tableau */
@@ -168,3 +171,13 @@ footer {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+
+.card-item {
+  display: none; /* cacher tous les produits par défaut */
+}
+.card-item.visible {
+  display: block; /* afficher seulement ceux marqués visible */
+}
+
+
